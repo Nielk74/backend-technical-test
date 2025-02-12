@@ -25,7 +25,7 @@ RSpec.describe FileConverter::JsonFile do
 
     it "raises an error for malformed JSON" do
       File.write(json_file, invalid_json)
-      expect { FileConverter::JsonFile.new(json_file) }.to raise_error(FileConverter::Error)
+      expect { FileConverter::JsonFile.new(json_file) }.to raise_error(FileConverter::InvalidFileError)
     end
   end
 

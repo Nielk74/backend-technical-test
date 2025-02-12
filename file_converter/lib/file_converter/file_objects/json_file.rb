@@ -8,8 +8,8 @@ module FileConverter
   class JsonFile < FileObject
     def load_file
       JSON.parse(File.read(@file_path))
-    rescue JSON::ParserError => e
-      raise FileConverter::Error, "Invalid JSON file: #{e.message}"
+    rescue JSON::ParserError
+      raise FileConverter::InvalidFileError, "Invalid JSON format in file: #{@file_path}"
     end
 
     def save(file_path)

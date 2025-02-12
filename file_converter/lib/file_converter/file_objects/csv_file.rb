@@ -9,8 +9,8 @@ module FileConverter
     def load_file
       csv_data = CSV.read(@file_path, headers: true, quote_char: '"', liberal_parsing: true)
       csv_data.map(&:to_h)
-    rescue CSV::MalformedCSVError => e
-      raise "CSV Parsing Error: #{e.message}"
+    rescue CSV::MalformedCSVError
+      raise FileConverter::InvalidFileError(@file_path)
     end
 
     def save(file_path)

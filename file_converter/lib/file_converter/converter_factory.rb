@@ -12,7 +12,7 @@ module FileConverter
       ouput_format = File.extname(output_file).delete_prefix(".")
       key = [input_format.downcase, ouput_format.downcase]
       converter_class = CONVERTERS[key]
-      raise "Unsupported conversion: #{key}" unless converter_class
+      raise FileConverter::UnsupportedConversionError, "Unsupported conversion: #{key}" unless converter_class
 
       converter_class.new(input_file, output_file)
     end

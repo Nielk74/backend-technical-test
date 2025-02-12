@@ -9,4 +9,7 @@ require_relative "file_converter/converter_factory"
 
 module FileConverter
   class Error < StandardError; end
+  class InexistentFileError < Error; end
+  class InvalidFileError < Error; end
+  class UnsupportedConversionError < Error; end
 end
