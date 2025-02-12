@@ -1,3 +1,9 @@
+# Results
+
+[![Lint Status](https://github.com/Nielk74/backend-technical-test/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/Nielk74/backend-technical-test/actions/workflows/main.yml)
+
+
+
 # Json2Csv
 
 This repository is part of: [MyJobGlasses](https://www.myjobglasses.com/) - Technical Test
