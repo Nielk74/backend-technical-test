@@ -7,12 +7,14 @@ module FileConverter
       %w[json csv] => JsonToCsvConverter
     }.freeze
 
-    def self.get_converter(input_format, ouput_format, input_file)
+    def self.get_converter(input_file, output_file)
+      input_format = File.extname(input_file).delete_prefix(".")
+      ouput_format = File.extname(output_file).delete_prefix(".")
       key = [input_format.downcase, ouput_format.downcase]
       converter_class = CONVERTERS[key]
       raise "Unsupported conversion: #{key}" unless converter_class
 
-      converter_class.new(input_file)
+      converter_class.new(input_file, output_file)
     end
   end
 end

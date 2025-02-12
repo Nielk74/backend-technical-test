@@ -2,9 +2,10 @@
 
 module FileConverter
   # Interface for file converters
-  class FileConverter
-    def initialize(input_file)
+  class Converter
+    def initialize(input_file, output_file)
       @input_file = input_file
+      @output_file = output_file
       @file_object = load_file_object
     end
 
