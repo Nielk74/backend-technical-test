@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors = ["Antoine Klein"]
   spec.email = ["67603819+Nielk74@users.noreply.github.com"]
 
-  spec.summary = "A small Ruby lib aiming to convert JSON files composed of arrays of objects (all following the same schema) to a flat CSV file where one line equals one object."
+  spec.summary = "A small Ruby lib aiming to convert files composed of arrays of objects all following the same schema"
   spec.description = ""
   spec.homepage = "https://github.com/Nielk74/backend-technical-test"
   spec.required_ruby_version = ">= 3.0.0"
